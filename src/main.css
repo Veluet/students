@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  h1, h2, h3, h4 {
+    font-family: "Ovo",serif !important;
+  }
+  body, p {
+    font-family:"Quattrocento Sans",verdana,sans-serif;
+    }
+    
+
+@font-face {
+    font-family: 'Ovo';
+    src: local('Ovo'),
+      url('assets/Ovo.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Quattrocento Sans';
+    src: local('Quattrocento Sans Italic'), local('QuattrocentoSans-Italic'),
+      url('assets/QuattrocentoSans-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Quattrocento Sans';
+    src: local('Quattrocento Sans Bold Italic'), local('QuattrocentoSans-BoldItalic'),
+      url('assets/QuattrocentoSans-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Quattrocento Sans';
+    src: local('Quattrocento Sans Bold'), local('QuattrocentoSans-Bold'),
+      url('assets/QuattrocentoSans-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Quattrocento Sans';
+    src: local('Quattrocento Sans'), local('QuattrocentoSans'),
+      url('assets/QuattrocentoSans.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  }
+
+  
