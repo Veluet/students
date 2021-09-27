@@ -31,7 +31,7 @@ export default {
   },
   created() {
     const apiUrl =
-      process.env.NODE_ENV === "production"
+      process.env.VUE_APP_ENVIRONMENT === "production"
         ? "api/Students.json"
         : "http://apitest.sertifi.net/api/Students";
 
