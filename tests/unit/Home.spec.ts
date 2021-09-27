@@ -2,10 +2,8 @@ import { shallowMount } from "@vue/test-utils";
 import Home from "@/views/Home.vue";
 
 import { mount, flushPromises } from "@vue/test-utils";
-import axios from "axios";
-import PostList from "./PostList.vue";
 
-const mockPostList = [
+const mockStudentList = [
   {
     Id: 1,
     Name: "Jack",
@@ -69,7 +67,13 @@ const mockPostList = [
     EndYear: 2016,
     GPARecord: [3.3, 2.3],
   },
-  { Id: 10, Name: "Safron", StartYear: 2016, EndYear: 2016, GPARecord: [3.3] },
+  {
+    Id: 10,
+    Name: "Safron",
+    StartYear: 2016,
+    EndYear: 2016,
+    GPARecord: [3.3],
+  },
   {
     Id: 11,
     Name: "Bill",
@@ -177,18 +181,42 @@ const mockPostList = [
   },
 ];
 
+const axios = {
+  get: async () => ({
+    data: { mockStudentList }
+  })
+};
+
 // Following lines tell Jest to mock any call to `axios.get`
 // and to return `mockPostList` instead
-jest.mock("axios", () => ({
-  get: jest.fn(() => mockPostList),
-}));
 
-describe("Home.vue", () => {
-  it("renders props.msg when passed", () => {
-    const siteName = "new message";
+const factory = (values = {}) => {
+  return shallowMount(Home, {
+    data() {
+      return {
+        ...values,
+      };
+    },
+  });
+};
+
+describe("Home", () => {
+
+  // Extremely basic unit test.
+  it("Renders a div with an ID of 'top' ", () => {
+    const wrapper = factory();
+
+    expect(wrapper.find("#top").exists()).toBe(true);
+  });
+  
+  it("has a unit test with mocked async data", async () => {
     const wrapper = shallowMount(Home, {
-      props: { siteName },
-    });
-    expect(wrapper.text()).toMatch(siteName);
+      global: {
+        mocks: {
+          axios: axios,
+        },
+      },
+    } as any);
+    await flushPromises();
   });
 });

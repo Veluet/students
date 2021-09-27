@@ -31,7 +31,7 @@
         class="md:whitespace-nowrap"
       >
         <div>
-          <h3>{{ year }}</h3>
+          <h3 v-bind:id="'year-' + year">{{ year }}</h3>
         </div>
         <div>
           <span class="bold">Attendence: </span>
