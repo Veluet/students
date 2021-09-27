@@ -30,8 +30,10 @@ export default {
     };
   },
   created() {
-    
-    const apiUrl = process.env.NODE_ENV === "production" ? "api/Students.json" : "http://apitest.sertifi.net/api/Students";
+    const apiUrl =
+      process.env.NODE_ENV === "production"
+        ? "api/Students.json"
+        : "http://apitest.sertifi.net/api/Students";
 
     axios.get(apiUrl).then((students) => {
       // Move response into local variable.
