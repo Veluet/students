@@ -1,7 +1,6 @@
 <template>
   <header>
     <h1 class="text-primary-500">{{siteName}}</h1>
-    <p>Students. as well</p>
   </header>
 </template>
 

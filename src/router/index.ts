@@ -10,7 +10,8 @@ const routes = [
       {
         name: "summarize",
         path: "summarize/:year",
-        component: () => import("../components/summarizeData.vue"),
+        props: true,
+        component: () => import("../components/summarizeYear.vue"),
       },
     ],
   },
